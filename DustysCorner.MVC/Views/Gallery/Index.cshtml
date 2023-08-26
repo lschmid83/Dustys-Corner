@@ -1,0 +1,61 @@
+﻿@model DustysCorner.MVC.Models.GalleryViewModel
+
+@{
+    ViewData["Title"] = "Dusty's Corner - Gallery - " + Model.Category.Name;
+}
+
+@section CSS {
+    <link rel="stylesheet" href="~/css/gallery.css" />
+}
+
+<div id="main" class="col-lg-9">
+    <h1>Gallery</h1>
+    <p>Here you'll find Completed Projects, WIPs, Doodles and other kinds of things.</p>
+    <p>Where creativity and imagination takes over and I become just a slave to the machine.</p>
+    <p>I don't know how most of it happened or where it came from, it almost built itself.</p>
+    <p>Enjoy!</p>
+    <div ng-controller="GalleryCtrl" ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model.Gallery))">
+        <div class="row">
+            <div id="pagination-options" class="row">
+                <div id="pagination-container">
+                    <div id="search-container">
+                        <p>Search:</p>
+                        <input id="search" class="form-control" placeholder="Filter text" ng-model="q">
+                    </div>
+                    <div id="items-per-page-container">
+                        <p>Items per page:</p>
+                        <input id="items-per-page" type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+                    </div>
+                </div>
+            </div>
+            <div id="pagination-controls">
+                <dir-pagination-controls template-url="/templates/pagination/dirPagination.tpl.html" boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+            </div>
+        </div>
+        <div id="gallery" class="row">
+            <div dir-paginate="gallery in galleryItems | filter:q | itemsPerPage: pageSize" current-page="currentPage">
+                <div class="clearfix" ng-if="$index % columns == 0"></div>
+                <div class="col-sm-4 col-xs-6 gallery-item">
+                    <div class="gallery-title-container" ng-style="columns === 1 ? { 'width':'100%' } : { 'width': '90%' }">
+                        <h1>{{gallery.Name}}</h1>
+                    </div>
+                    <a class="lightbox2" href="/images/gallery/{{gallery.Image}}" data-lightbox="{{gallery.Name}}" title="{{gallery.ImageTitle}}">
+                        <img class="gallery-image" ng-style="columns === 1 ? { 'width':'100%' } : { 'width': '90%' }" ng-src="/images/gallery/{{gallery.Image}}" />
+                    </a>
+                    <div class="lightbox2-gallery">
+                        <a href="/images/gallery/{{image.Name}}" data-lightbox="{{gallery.Name}}" title="{{image.Title}}" ng-repeat="image in gallery.AdditionalImages"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <dir-pagination-controls template-url="/templates/pagination/dirPagination.tpl.html" boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+        </div>
+    </div>
+</div>
+
+<partial name="_SidebarLarge" model="Model" />
+
+@section Scripts {
+    <script src="/js/gallery.js"></script>
+}		

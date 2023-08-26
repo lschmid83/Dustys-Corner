@@ -1,0 +1,31 @@
+﻿@model DustysCorner.MVC.Models.BaseViewModel
+
+<footer id="footer" ng-app="app" ng-controller="CategoryCtrl" ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model.Categories))">
+    <div class="container">
+        <div class="row">
+            <div id="main-menu" class="col-md-7 col-xs-8">
+                <h1>Main Menu</h1>
+                <ul class="footer-list" ng-bind-html="footermenu">
+                </ul>
+            </div>
+            <div id="terms-menu" class="col-md-3 col-xs-4">
+                <h1>Terms</h1>
+                <ul class="footer-list hidden-xs">
+                    <li><a href="/returns">Returns and Refunds</a></li>
+                    <li><a href="/terms">Terms and Conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+                <ul class="footer-list visible-xs">
+                    <li><a href="/returns">Returns</a></li>
+                    <li><a href="/terms">Conditions</a></li>
+                    <li><a href="/privacy">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div id="copyright" class="footer-menu">
+                © Dusty's Corner @DateTime.Now.Year. Website design by <a href="https://www.linkedin.com/in/lawrence-schmid" target="_blank">Lawrence Schmid</a>
+            </div>
+        </div>
+    </div>
+</footer>

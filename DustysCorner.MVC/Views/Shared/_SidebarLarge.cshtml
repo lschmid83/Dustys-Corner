@@ -1,0 +1,16 @@
+﻿@model DustysCorner.MVC.Models.BaseViewModel
+
+<div id="sidebar-large" class="col-lg-3 visible-lg">
+
+    <div id="large-social-media">
+        <h1>Find us on social media</h1>
+        <div id="social-media-icons">
+            <a href="@Model.SocialMedia.Facebook" target="_blank"><img src="/images/facebook.png" /></a>
+            <a href="@Model.SocialMedia.Twitter" target="_blank"><img src="/images/twitter.png" /></a>
+        </div>
+    </div>
+
+    <div id="large-events">
+        <partial name="_Events" model="Model" />
+    </div>
+</div>		

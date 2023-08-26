@@ -1,0 +1,375 @@
+/* Sidebar (large devices) */
+#content #sidebar-large {
+	margin-top: 0px;
+	min-width: 292px;
+}
+
+#content #sidebar-large h1 {
+	margin-bottom: 0px;
+}
+
+#content #sidebar-large #social-media-icons img {
+	margin-top: 10px;
+	margin-right: 3px;
+	margin-bottom: 10px;
+}
+
+#content #sidebar-large #large-twitter {
+	margin-top: -5px;
+	margin-left: -10px;
+	height: 263px;
+}
+
+#content #sidebar-large #large-youtube {
+	margin-top: 21px;
+}
+
+/* EventBrite */
+#content #sidebar-large #large-eventbrite {
+	width: 195px;
+	margin: 0 auto;
+	margin-top: 18px;
+}
+
+.powered-by-eb {
+	display: none;
+}
+
+#large-events {
+	width: 100%;
+}
+
+#eventbrite-container {
+	width: 195px;
+	height: 375px;
+	margin: 0 auto;
+    padding: 5px;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #EFEFEF;
+    border-radius: 5px;
+    border-color: #EFEFEF;
+}
+
+#eventbrite-container #event-highlight {
+	width: 185px;
+    height: 112px;
+    background-color: #fff;
+	border-style: solid;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-width: 1px;
+	border-color: #d5d5d3;	
+}
+
+#eventbrite-container #event-countdown {
+    width: 183px;
+    padding: 7px 0 0;
+    text-align: center;
+}
+
+#eventbrite-container #event-countdown h1 {
+    font-size: 60px;
+    letter-spacing: -2px;
+    line-height: 88px;
+    color: #D5D5D3;
+    margin: 0px;
+    padding: 0px;	
+}
+
+#eventbrite-container #event-countdown {
+	font-size: 11px;
+    line-height: 11px;
+    color: #D5D5D3;
+    margin: 0 0 4px;
+    padding: 0px;
+	display: block;
+	margin-top: -1px;
+}
+
+#eventbrite-container .event-side-border {
+	background-color: #fff;
+	border-style: solid;
+	border-top: none;
+	border-bottom: none;
+	border-width: 1px;
+	border-color: #d5d5d3;	
+}
+
+#eventbrite-container #event-image {	
+	padding: 5px;
+	padding-top: 10px;
+}
+
+#eventbrite-container #event-name a {
+    padding: 15px 5px 5px;
+    padding-top: 10px;
+	overflow: hidden;
+	color: #000000;
+    text-decoration: none;
+	font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#eventbrite-container #event-date {
+    font-size: 11px;
+    line-height: 14px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+#eventbrite-container #event-venue {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    color: #000000;
+	padding-top: 5px;
+}
+
+#eventbrite-container #register-now {
+	padding-top: 13px;
+}
+
+#register-now a {
+	width: 122px;
+    height: 19px;
+    margin: auto;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    display: block;
+    background-color: #EE6600;
+    border-radius: 2px;
+	text-decoration: none;
+}
+
+#eventbrite-container #tweet-event {
+	background-color: #fff;
+	border-style: solid;
+	border-top: none;
+	border-width: 1px;
+	border-color: #d5d5d3;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding-top: 7px;
+	height: 37px;
+}
+
+#eventbrite-container #tweet-event a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Quotes */
+#content #sidebar-large #large-quotes {
+	margin-top: 20px;
+	margin-bottom: 200px;
+}
+
+.bubble {
+	position: relative;
+	width: 260px;
+	height: auto;
+	padding: 0px;
+	background: #f5f5f5;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 17px;
+	margin-top: 13px;
+	margin-left: 10px;
+}
+
+.bubble:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 15px 15px 15px 0;
+	border-color: transparent #f5f5f5;
+	display: block;
+	width: 0;
+	z-index: 1;
+	left: -15px;
+	top: 32px;
+}
+
+/* Sidebar (medium devices) */
+#sidebar-medium {
+	margin-bottom: 25px;
+}
+
+#sidebar-medium h1 {
+	margin-bottom: 10px;
+}
+
+#sidebar-medium #medium-youtube {
+	padding: 0px;
+}
+
+#sidebar-medium #youtube-container {
+	width: 285px;
+	max-width: 285px;
+}
+
+#sidebar-medium #medium-social-media {
+	padding-left: 0px;
+}
+
+#sidebar-medium #social-media-container {
+	margin-top: 20px;
+}
+
+#sidebar-medium #medium-twitter-embed {
+	margin-left: -10px;
+	/*width: 100%;*/
+}
+
+.twitter-timeline {
+	visibility: hidden;
+}
+
+.timeline-footer {
+	display: none;
+}
+
+/* YouTube embed */
+.youtube_codegena {
+	width: 100% !important;
+	overflow: hidden;
+	cursor: pointer;
+	-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); /*ios 7 border-radius-bug */
+	-webkit-transform: rotate(0.000001deg); /*mac os 10.6 safari 5 border-radius-bug */
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.youtube-container iframe {
+	-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); /*ios 7 border-radius-bug */
+	-webkit-transform: rotate(0.000001deg); /*mac os 10.6 safari 5 border-radius-bug */
+	-webkit-border-radius: 10px; 
+	-moz-border-radius: 10px;
+	border: 0px;
+	border-radius: 5px; 
+	overflow: hidden; 
+}
+
+.content .play {
+	position: absolute;
+	top: 0px;
+}
+
+@media (max-width: 990px) {  	
+	
+	#sidebar-medium-container {
+		width: 630px;
+		margin: auto;	
+	}
+	
+	#sidebar-medium #medium-youtube {
+		width: 313px;
+	}
+	
+	#sidebar-medium #medium-twitter {
+		width: 313px;
+		padding-right: 0px;
+	}	
+	
+	#sidebar-medium #medium-events {
+		margin-top: 3px;
+	}
+
+	#sidebar-medium #register-now {
+		padding-top: 8px;
+	}
+
+	#sidebar-medium #register-now a {
+		padding-top: 2px;
+		height: 24px;
+		border-radius: 5px;
+		float: left;
+	}
+}
+
+@media (max-width: 670px) {  
+
+	#sidebar-medium-container {
+		width: 100%;
+	}
+	
+	#sidebar-medium #medium-youtube {
+		padding-left: 0px;
+		width: 50%;
+	}
+	
+	#sidebar-medium #medium-twitter {
+		padding-left: 25px;
+		width: 50%;
+	}
+	
+	#sidebar-medium #youtube-container {
+		width: 100%;
+		max-width: 500px;
+	}	
+}
+
+@media (max-width: 580px) { 
+
+	#sidebar-medium #medium-youtube {
+		width: 100%;
+	}
+	
+	#sidebar-medium #medium-youtube #youtube-container {
+		width: 262px;
+		margin: 0 auto;
+	}
+	
+	#sidebar-medium #medium-social-media {
+		width: 262px;
+		margin: 0 auto;
+	}
+	
+	#sidebar-medium #medium-twitter {
+		width: 100%;
+		padding-left: 0px;
+	}
+	
+	#sidebar-medium #medium-events {
+	    width: 262px;
+		margin: 0 auto;
+	}
+	
+	#sidebar-medium #twitter-container {
+		width: 262px;
+		margin: 0 auto;
+	}
+	
+	#sidebar-medium #twitter-container h1 {
+		display: none;
+	}
+}
+
+@media (max-width: 320px) { 
+
+	#sidebar-medium #medium-youtube #youtube-container {
+		width: 100%;		
+	}
+	
+	#sidebar-medium #twitter-container {
+		width: 100%;
+		margin: 0 auto;
+	}
+}

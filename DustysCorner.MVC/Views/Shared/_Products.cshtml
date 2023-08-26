@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DustysCorner.Client.Models.ProductModel>
+
+<div class="row" ng-controller="ProductCtrl" ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <div class="row">
+        <div id="pagination-options" class="row">
+            <div id="pagination-container">
+                <div id="search-container">
+                    <p>Search:</p>
+                    <input id="search" class="form-control" placeholder="Filter text" ng-model="q">
+                </div>
+                <div id="items-per-page-container">
+                    <p>Items per page:</p>
+                    <input id="items-per-page" type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+                </div>
+            </div>
+        </div>
+        <div id="pagination-controls">
+            <dir-pagination-controls template-url="/templates/pagination/dirPagination.tpl.html" boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+        </div>
+    </div>
+    <div id="products-wrapper"  class="row">
+        <div class="item col-md-4 col-sm-6 col-xs-6" dir-paginate="product in products | filter:q | itemsPerPage: pageSize" current-page="currentPage">
+            <div class="product-card" data-popup-open="popup-{{product.Name}}">
+                <div class="product-title">{{product.Name}}</div>
+                <div class="product-tag limited-stock" ng-if="product.LimitedStock">Limited Stock</div>
+                <div class="product-tag sale" ng-if="product.Discount > 0">
+                    Sale {{product.Discount}}% off!
+                </div>
+                <div class="product-image" ng-style="longItemNames && product.Name.length < 30 ? {'margin-top':'20px'} : {'margin-top': '0px'}">
+                    <span class="roll"></span>
+                    <a class="lightbox2" href="/images/products/{{product.Image}}" data-lightbox="{{product.Name}}" title="{{product.ImageTitle}}">
+                        <img ng-src="/images/products/{{product.Thumbnail}}" />
+                    </a>
+                    <div class="lightbox2-gallery">
+                        <a href="/images/products/{{image.Name}}" data-lightbox="{{product.Name}}" title="{{image.Description}}" ng-repeat="image in product.AdditionalImages"></a>
+                    </div>
+                </div>
+                <div class="product-price">
+                    <div class="product-regular-price strike-out" ng-if="product.Discount > 0">£{{product.BeforeSalePrice}}</div>
+                    <div class="product-sale-price">£{{product.Price}}</div>
+                    <div class="product-options" ng-show="product.Options.length > 0" style="float:left; margin-left: 10px;">
+                        <select id="product-option" ng-model="product.productoption" ng-options="option.Name for option in product.Options" style="width: 100px;">
+                            <option value="" ng-if="false"></option>
+                        </select>
+                    </div>
+                </div>
+                <br />
+                <div class="product-basket">
+                    <div class="product-add-to-basket">
+                        <ngcart-addtocart class="add-to-basket" template-url="/templates/ngCart/addtocart.html" id="{{product.Id}}" name="{{product.Name}}" price="{{product.Price}}" option="{{product.productoption.Name}}" quantity="1" quantity-max="5" data="product.Data">Add to basket</ngcart-addtocart>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" data-popup="popup-{{product.Name}}">
+                <div class="popup-inner">
+                    <h1>{{product.Name}}</h1>
+                    <div ng-bind-html="product.Description"></div>
+                    <a class="popup-close" data-popup-close="popup-{{product.Name}}" href="#">x</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <dir-pagination-controls template-url="/templates/pagination/dirPagination.tpl.html" boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div ng-show="ngCart.getTotalItems() > 0">
+	Your shopping basket contains {{ngCart.getTotalItems()}} items.
+</div>
+
+
+<div ng-show="ngCart.getTotalItems() === 0">
+    Your shopping basket is currently empty.
+</div>
+
+<div id="shopping-cart" class="table-responsive col-lg-12" ng-show="ngCart.getTotalItems() > 0" ng-controller="CheckoutCtrl">
+    <table class="table ngCart cart">
+
+        <thead>
+        <tr>
+            <th></th>
+            <th></th>
+			<th>Name</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr ng-show="ngCart.getTax()">
+            <td></td>
+            <td></td>
+			<td></td>
+			<td></td>
+            <td>Tax ({{ ngCart.getTaxRate() }}%):</td>
+            <td>{{ ngCart.getTax() | currency : "£" }}</td>
+        </tr>
+         <tr>
+            <td></td>
+            <td></td>
+			<td></td>
+			<td></td>
+            <td style="height: 67px;">Subtotal:</td>
+            <td>{{ ngCart.getSubTotal() | currency : "£" }}</td>
+        </tr>      
+		<tr ng-show="ngCart.getShipping()">
+            <td colspan="3" style="padding-top: 20px">Please select a shipping country:<br/><ng-include src="'/templates/ngCart/country.html'"></ng-include></td>
+			<td></td>			
+            <td>Shipping:</td>
+            <td>{{ ngCart.getShipping() | currency : "£" }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+			<td></td>
+			<td></td>
+            <td style="height: 67px;">Total:</td>
+            <td>{{ ngCart.totalCost() | currency : "£" }}</td>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr ng-repeat="item in ngCart.getCart().items track by $index">
+            <td><span ng-click="ngCart.removeItemById(item.getId())" class="glyphicon glyphicon-remove remove-item"></span></td>
+			<td>
+				<img ng-src="{{item.getData().picture}}" style="width: 50px;" />
+			</td>
+            <td>{{ item.getName() }}<br/> {{ item.getOption() }}</td>
+		    <td><span class="glyphicon glyphicon-minus" ng-class="{'disabled':item.getQuantity()==1}"
+                      ng-click="item.setQuantity(-1, true)"></span>&nbsp;&nbsp;
+                {{ item.getQuantity() | number }}&nbsp;&nbsp;
+                <span class="glyphicon glyphicon-plus" ng-click="item.setQuantity(1, true)"></span></td>
+            <td>{{ item.getPrice() | currency : "£"}}</td>
+            <td>{{ item.getTotal() | currency : "£"}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<style>
+    .ngCart.cart span[ng-click] {
+        cursor: pointer;
+    }
+    .ngCart.cart .glyphicon.disabled {
+        color:#aaa;
+    }
+</style>

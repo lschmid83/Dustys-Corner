@@ -1,0 +1,28 @@
+#shopping-cart {
+	padding-left: 0px; 
+	padding-right: 0px;	
+	margin-top: 10px;
+}
+
+#shopping-cart img {
+	border-radius: 5px;
+}
+
+#shopping-cart .table > tbody > tr > td,
+.table > tfoot > tr > td
+{
+     vertical-align: middle;
+}
+
+#shopping-cart .option {
+	width: 75%;
+}
+
+#shipping-country-selector {
+	margin-top: 10px; 
+	width: 265px;
+}
+
+#main {
+	margin-bottom: 60px;
+}

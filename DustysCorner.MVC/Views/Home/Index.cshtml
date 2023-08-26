@@ -1,0 +1,57 @@
+﻿@model DustysCorner.MVC.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Dusty's Corner - Home";
+}
+
+@section CSS {
+    <link rel="stylesheet" href="~/css/products.css" />
+    <link rel="stylesheet" href="~/css/reviews.css" />
+    <link rel="stylesheet" href="~/css/home.css" />
+}
+
+<div id="main" class="col-lg-9">
+
+    <p>Welcome to Dusty"s Corner, the place where ideas come to life.</p>
+    <p>From what was once a small desk some 20 years ago, has now become a workshop where artistry meets functionality and creations become something quite unique.</p>
+    <p class="hidden-xs">London based in a town called Streatham, our products are handcrafted using many different skills and techniques which make them great additions to any collection.</p>
+    <img class="hidden-xs" src="/images/home-1.png" style="margin-top: 7px; margin-bottom: 17px; border-radius: 5px; width: 800px;" />
+    <p>Our main focus is on producing miniature scale models (mostly for wargaming or architectural), but we like to be as diverse as possible and consider any requests.</p>
+    <p class="hidden-xs">We also provide free guides, tutorials, reviews and more to help people along.</p>
+    <p class="hidden-xs">Dusty"s Corner hopes to provide an outstanding service, tailor made to satisfy your every needs.</p>
+    <p>So please feel free to drop us an <a href="/contact">email</a> to discuss ideas, projects or for any enquires, we"re here to help!</p>
+    <p class="hidden-xs">We hope you enjoy exploring the website, there"s plenty more to come!<br />Comments/suggestions are always appreciated, thanks.</p>
+    <p class="hidden-xs">All the best!</p>
+    <div class="row hidden-xs">
+        <div class="col-sm-5">
+            <img src="/images/home-2.png" style="padding-top: 15px" />
+        </div>
+        <div class="col-sm-4">
+            <img src="/images/home-3.png" style="padding-left: 80px" />
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="latest-products" class="row">
+        <h1>Latest Products</h1>
+        <p>These items are selling fast. <a href="~/shop" class="link">Visit our Shop</a></p>
+        <partial name="_Products" model="Model.FeaturedProducts" />
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="customer-reviews">
+        <h1>Customer Reviews</h1>
+        <p>
+            We enjoy hearing your feedback to help improve our customer support.
+            <partial name="_Reviews" model="Model.CustomerReviews" />
+    </div>
+
+</div>
+
+<partial name="_SidebarLarge" model="Model" />
+
+@section Scripts {
+    <script src="~/js/home.js"></script>
+}		

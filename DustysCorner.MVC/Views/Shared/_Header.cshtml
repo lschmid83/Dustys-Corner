@@ -1,0 +1,45 @@
+﻿@model DustysCorner.MVC.Models.BaseViewModel
+
+<div ng-app="app" ng-controller="CategoryCtrl" ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model.Categories))">
+    <nav id="dusty-navbar" class="navbar navbar-fixed-top navbar-default">
+        <div id="header-top">
+            <div class="container">
+                <div class="row">
+                    <div id="header-top-left" class="pull-left">
+                    </div>
+                    <div id="header-top-right" class="pull-right">
+                        <div id="basket">
+                            <div id="basket-link"><span class='glyphicon glyphicon-shopping-cart nav-icon'></span><span id="basket-text">Your Basket</span></div>
+                            <div class="dropdown">
+                                <div id="cart-summary-container">
+                                    <ngcart-cart template-url="/templates/ngCart/summary.html"></ngcart-cart>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button id="toggle-menu" type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target=".navmenu" data-disable-scrolling="false" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="/images/logo.png">
+                    <h3>Dusty's Corner</h3>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse" data-hover="dropdown" data-animations="zoomIn">
+                <ul id="main-menu" class="nav navbar-nav" ng-bind-html="mainmenu"></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="side-menu" class="navmenu navmenu-default navmenu-fixed-right offcanvas">
+        <ul class="nav navmenu-nav" ng-app="app" ng-bind-html="sidemenu"></ul>
+    </div>
+</div>

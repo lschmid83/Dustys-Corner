@@ -1,0 +1,23 @@
+﻿@model DustysCorner.MVC.Models.ShopViewModel
+
+@{
+    ViewData["Title"] = "Dusty's Corner - Shop - " + Model.Category.Name;
+}
+
+@section CSS {
+    <link rel="stylesheet" href="~/css/products.css" />
+    <link rel="stylesheet" href="~/css/shop.css" />
+}
+
+<div id="main" class="col-lg-9">
+    <h1>Welcome to the online shop</h1>
+    <p>We also provide services such as painting, commisions, and lifecasting.</p>
+    <p>Please feel free to <a href="/contact">contact us</a> with any enquires.</p>
+    <p>You will be sent an email once the package has been mailed to let you know it's on it's way.</p>
+    <p><b>Please note:</b> These products are not sold painted and images are for illustration purposes only.</p>
+    <div id="products">
+        <partial name="_Products" model="Model.Products" />
+    </div>
+</div>
+
+<partial name="_SidebarLarge" model="Model" />

@@ -1,0 +1,72 @@
+﻿@model DustysCorner.MVC.Models.BaseViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="London-based craftsman sculptor painter model maker, making stuff with a special touch!">
+    <meta name="keywords" content="crafts, models, sculpture, painter, model maker, studio, design">
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="~/css/bootstrap-dropdown-hover/bootstrap-dropdownhover.css">
+        <link rel="stylesheet" href="~/css/bootstrap-dropdown-hover/animate.min.css">
+        <link rel="stylesheet" href="~/css/jasny-bootstrap/jasny-bootstrap.css">
+        <link rel="stylesheet" href="~/css/popup-modal/popup-modal.css">
+        <link rel="stylesheet" href="~/css/lightbox.css">
+        <link rel="stylesheet" href="~/css/pagination.css">
+        <link rel="stylesheet" href="~/css/style.css">
+        <link rel="stylesheet" href="~/css/header.css">
+        <link rel="stylesheet" href="~/css/footer.css">
+        <link rel="stylesheet" href="~/css/sidebar.css">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/layout.min.css" />
+    </environment>
+
+    @RenderSection("CSS", required: false)
+
+</head>
+<body ng-app="app">
+
+    <partial name="_Header" model="Model" />
+ 
+    <div id="content" class="container body-content">
+        <div class="row">
+            @RenderBody()
+            <a id="back-to-top" href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        </div>
+    </div>
+
+    <partial name="_Footer" model="Model" />
+
+    <environment include="Development">
+        <script src="~/lib/jQuery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/angular/angular.js"></script>
+        <script src="~/js/bootstrap-dropdown-hover/bootstrap-dropdownhover.js"></script>
+        <script src="~/js/jasny-bootstrap/jasny-bootstrap.js"></script>
+        <script src="~/js/ngCart/ngCart.js"></script>
+        <script src="~/js/lightbox2/lightbox.js"></script>
+        <script src="~/js/linq/linq.js"></script>
+        <script src="~/js/dirPagination.js"></script>
+        <script src="~/js/js.cookie.js"></script>
+        <script src="~/js/header.js"></script>
+        <script src="~/js/footer.js"></script>
+        <script src="~/js/app.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/layout.min.js"></script>
+    </environment>
+
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-592ea6524e4d6e44"></script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

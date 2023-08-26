@@ -1,0 +1,25 @@
+.wrapper_404 {
+    padding: 82px 0 143px;
+    margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.wrapper_404 h1 {
+    margin-bottom: 42px;
+    line-height: 162px;
+    font-size: 200px;
+}
+
+.color {
+    color: #08c1f3 !important;
+}
+
+.wrapper_404 h2 {
+    margin-bottom: 16px;
+    line-height: 50px;
+    font-size: 46px;
+}
+
+.wrapper_404 p {
+    margin-bottom: 54px;
+}

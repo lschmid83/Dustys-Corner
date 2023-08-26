@@ -1,0 +1,24 @@
+﻿@model DustysCorner.MVC.Models.ContactViewModel
+
+@{
+    ViewData["Title"] = "Dusty's Corner - Contact";
+}
+
+@section CSS {
+    <link rel="stylesheet" href="~/css/contact.css" />
+}
+
+<div id="main" class="col-lg-9">
+    <div id="contact" class="row">
+        <h1>Contact Us</h1>
+        <p>Complete the form below to send us an email.</p>
+        <form id="contact-form" action="/contact/send" method="POST">
+            <label for="name">Name: <input type="text" name="name" id="name" class="form-control"></label><br>
+            <label for="email">Email address: <input type="email" name="email" id="email" class="form-control"></label><br>
+            <label for="message">Message: <textarea name="message" id="message" rows="8" cols="20" class="form-control"></textarea></label><br>
+            <input id="submit" type="submit" value="Send">
+        </form>
+    </div>
+</div>
+
+<partial name="_SidebarLarge" model="Model" />

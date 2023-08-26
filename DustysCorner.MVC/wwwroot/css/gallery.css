@@ -1,0 +1,39 @@
+#gallery img {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+#gallery div {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#gallery .gallery-item {
+	margin-bottom: 15px;
+}
+
+#gallery .gallery-icon-container {
+	float:right; 
+	margin-top: -37px;
+}
+
+#gallery .gallery-icon {
+	width: 16px; 
+	height: 16px;
+}
+
+@media (max-width: 475px) {  	
+
+	.gallery-item {
+		width: 100%;
+	}
+	
+	#pagination-controls {
+		margin-right: 0px !important;
+	}	
+}
+
+.lb-caption a {
+	color: #ccc !important;
+}

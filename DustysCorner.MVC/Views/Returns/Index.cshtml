@@ -1,0 +1,38 @@
+﻿@model DustysCorner.MVC.Models.ReturnsViewModel
+
+@{
+    ViewData["Title"] = "Dusty's Corner - Returns and Refunds";
+}
+
+@section CSS {
+    <link rel="stylesheet" href="~/css/terms.css" />
+}
+
+<div id="main" class="col-lg-9">
+    <p>Thanks for shopping at Dusty's Corner.</p>
+    <p>If you are not entirely satisfied with your purchase, we're here to help.</p>
+
+    <h1>Returns</h1>
+    <p>You have 30 calendar days to return an item from the date you received it.</p>
+    <p>To be eligible for a return, your item must be unused and in the same condition that you received it.</p>
+    <p>Your item must be in the original packaging.</p>
+    <p>Your item needs to have the receipt or proof of purchase.</p>
+
+    <h1>Refunds</h1>
+    <p>
+        Once we receive your item, we will inspect it and notify you that we have received your returned
+        item. We will immediately notify you on the status of your refund after inspecting the item.
+    </p>
+    <p>If your return is approved, we will initiate a refund to your original method of payment.</p>
+    <p>You will receive the credit within a certain amount of days, depending on your card issuer's policies.</p>
+
+    <h1>Shipping</h1>
+    <p>You will be responsible for paying for your own shipping costs for returning your item. Shipping costs are nonrefundable.</p>
+    <p>If you receive a refund, the cost of return shipping will be deducted from your refund.</p>
+
+    <h1>Contact Us</h1>
+    <p>If you have any questions on how to return your item to us, <a href="/contact">contact us.</a></p>
+</div>
+
+<partial name="_SidebarLarge" model="Model" />
+

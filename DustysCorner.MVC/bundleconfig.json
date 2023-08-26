@@ -1,0 +1,45 @@
+﻿// Configure bundling and minification for the project.
+// More info at https://go.microsoft.com/fwlink/?LinkId=808241
+[
+  {
+    "outputFileName": "wwwroot/css/layout.min.css",
+    // An array of relative input file paths. Globbing patterns supported
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "wwwroot/lib/font-awesome/css/font-awesome.css",
+      "wwwroot/css/bootstrap-dropdown-hover/bootstrap-dropdownhover.css",
+      "wwwroot/css/bootstrap-dropdown-hover/animate.css",
+      "wwwroot/css/jasny-bootstrap/jasny-bootstrap.css",
+      "wwwroot/css/popup-modal/popup-modal.css",
+      "wwwroot/css/lightbox.css",
+      "wwwroot/css/pagination.css",
+      "wwwroot/css/style.css",
+      "wwwroot/css/header.css",
+      "wwwroot/css/footer.css",
+      "wwwroot/css/sidebar.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/layout.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jQuery/dist/jquery.js",
+      "wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "wwwroot/lib/angular/angular.js",
+      "wwwroot/js/bootstrap-dropdown-hover/bootstrap-dropdownhover.js",
+      "wwwroot/js/jasny-bootstrap/jasny-bootstrap.min.js",
+      "wwwroot/js/ngCart/ngCart.js",
+      "wwwroot/js/lightbox2/lightbox.js",
+      "wwwroot/js/linq/linq.js",
+      "wwwroot/js/dirPagination.js",
+      "wwwroot/js/js.cookie.js",
+      "wwwroot/js/header.js",
+      "wwwroot/js/footer.js",
+      "wwwroot/js/app.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

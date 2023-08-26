@@ -1,0 +1,34 @@
+#main img {
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+#me {
+	width: 100%;
+	max-width: 700px;
+}
+
+#guinea-pigs {
+	margin-top: 20px;
+	margin-bottom: 25px;
+	max-width: 450px;
+}
+
+#thanks {
+	text-align: center;
+}
+
+@media (max-width: 440px) { 
+	#me {	
+		content:url("../images/about/me-mobile.png");
+		margin-top: 20px;
+		width: 90%;
+	}
+	
+	#guinea-pigs {
+		width: 100%;
+	}
+}

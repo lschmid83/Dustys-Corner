@@ -1,0 +1,39 @@
+#contact-form {
+	margin-top: 10px; 
+	margin-bottom: 10px;
+}
+
+#contact-form label {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#contact-form input {
+	margin-top: 10px;
+}
+
+#contact-form textarea {
+	margin-top: 10px;
+}
+
+#name {
+	width: 40%; 
+}
+
+#email {
+	width: 40%; 
+}
+
+#message {
+	width: 100%; 
+	height: 300px
+}
+
+#submit {
+	margin-top: 10px !important; 
+	margin-bottom: 10px;	
+}
+
+#result {
+	margin-top: 0px !important;
+}

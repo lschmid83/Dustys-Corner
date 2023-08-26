@@ -1,0 +1,18 @@
+﻿@model DustysCorner.MVC.Models.CheckoutViewModel
+
+@{
+    ViewData["Title"] = "Dusty's Corner - Checkout";
+}
+
+@section CSS {
+    <link rel="stylesheet" href="~/css/checkout.css" />
+}
+
+<div id="main" class="col-lg-9">
+    <h1>Checkout</h1>
+    <ngcart-cart template-url="/templates/ngCart/cart.html"></ngcart-cart>
+    <ngcart-checkout template-url="/templates/ngCart/checkout.html" service="paypal" settings="{ url:'/shop/checkout', paypal: { business: '', currency_code:'GBP' }}"></ngcart-checkout>
+</div>
+
+<partial name="_SidebarLarge" model="Model" />
+

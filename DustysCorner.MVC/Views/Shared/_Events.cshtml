@@ -1,0 +1,28 @@
+﻿@model DustysCorner.MVC.Models.BaseViewModel
+
+<div id="eventbrite-container" ng-controller="EventCtrl" ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model.Event))">
+    <div id="event-highlight">
+        <div id="event-countdown">
+            <h1>{{event.RemainingDays}}</h1>
+            <p id="event-countdown">DAYS REMAINING UNTIL</p>
+        </div>
+    </div>
+    <div id="event-image" class="event-side-border">
+        <a href="{{event.Url}}" target="_blank"><img ng-src="{{event.Image}}" style="width:173px;"></a>
+    </div>
+    <div id="event-name" class="event-side-border">
+        <a href="{{event.Url}}" target="_blank" id="display_eventname" style="display:block;">{{event.Name}}</a>
+    </div>
+    <div id="event-date" class="event-side-border">
+        {{event.StartDate | date : "dd MMMM"}} - {{event.EndDate | date : "dd MMMM"}} {{event.EndDate | date : "yyyy"}}
+    </div>
+    <div id="event-venue" class="event-side-border">
+        {{event.Location}}
+    </div>
+    <div id="register-now" class="event-side-border">
+        <a href="{{event.Url}}" id="display_eventregister" title="Register Now!" target="_blank" style="display:block;">Register Now!</a>
+    </div>
+    <div id="tweet-event">
+        <a href="{{event.Twitter}}" target="_blank" style="display:block;">Tweet This Event</a>
+    </div>
+</div>

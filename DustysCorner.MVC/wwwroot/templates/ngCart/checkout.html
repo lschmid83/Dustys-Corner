@@ -1,0 +1,31 @@
+
+<div ng-if="service=='http' || service == 'log'">
+    <button class="btn btn-primary" ng-click="checkout()" ng-disabled="!ngCart.getTotalItems()" ng-transclude>Checkout</button>
+</div>
+
+
+<div ng-if="service=='paypal'">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="ngCart.getTotalItems()">
+        <input type="hidden" name="cmd" value="_cart" />
+        <input type="hidden" name="upload" value="1">
+		<input type="hidden" name="business" value="{{ settings.paypal.business }}" />
+        <input type="hidden" name="lc" value="CA" /> 
+		<ng-form name="cartItems" ng-repeat="item in ngCart.getCart().items track by $index">
+			<input type="hidden" name="item_name_{{$index+1}}" value="{{item.getName()}}{{(item.getCheckoutOption())}}" />
+			<input type="hidden" name="amount_{{$index+1}}" value="{{item.getPrice()}}" />
+			<input type="hidden" name="quantity_{{$index+1}}" value="{{item.getQuantity()}}" />			
+			<ng-form name="shipping" ng-if="$last">
+				<input type="hidden" name="item_name_{{$index+2}}" value="Shipping" />
+				<input type="hidden" name="amount_{{$index+2}}" value="{{ngCart.getShipping()}}" />
+				<input type="hidden" name="quantity_{{$index+2}}" value="1" />	
+			</ng-form>			
+		</ng-form>
+		<input type="hidden" name="currency_code" value="{{ settings.paypal.currency_code }}" />
+        <input type="hidden" name="button_subtype" value="services" />
+        <input type="hidden" name="no_note" value="{{ settings.paypal.no_note }}" />
+		<input type="hidden" name="return" value="http://localhost/shop/checkout">
+        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest" />
+        <input style="cursor: pointer;" type="image" src="/images/paypal-button.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+    </form>
+</div>

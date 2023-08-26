@@ -1,0 +1,11 @@
+﻿@model IEnumerable<DustysCorner.Client.Models.ReviewModel>
+
+<div id="reviews-wrapper" class="row" ng-app="app" ng-controller="ReviewCtrl" ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <div class="item col-sm-4 col-xs-6" ng-repeat="review in reviews">
+        <div class="review-card">
+            <div class="review-image"><img ng-src="{{review.Image}}" /></div>
+            <div class="review-name">{{review.Name}}</div>
+            <div class="review-text">{{review.Text}}</div>
+        </div>
+    </div>
+</div>

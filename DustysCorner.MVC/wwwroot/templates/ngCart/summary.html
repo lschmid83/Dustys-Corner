@@ -1,0 +1,35 @@
+<div id="cart-summary" class="disable_text_highlighting">
+	<div id="empty-cart" ng-show="ngCart.getTotalItems() === 0">
+		Your basket is currently empty.
+	</div>
+
+	<div class="row" id="{{item.getSummaryId()}}" ng-repeat="item in ngCart.getCart().items track by $index">   
+		<div class="image">
+			<img ng-src="{{item.getData().picture}}" />
+		</div>
+		<div class="name">	
+			<b>{{item.getName()}}</b><br/>
+			<div class="product-option">{{item.getOption()}}</div>
+		</div>
+		<div class="remove-item">
+			<span ng-click="ngCart.removeItemById(item.getId())" class="glyphicon glyphicon-remove"></span>
+		</div>
+		<div class="row">
+			<div class="quantity">
+				Quantity: {{item.getQuantity() | number}}
+			</div>
+			<div class="price">
+				{{item.getTotal() | currency : "£"}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="cart-summary-total" ng-show="ngCart.getTotalItems() > 0">
+	<div id="checkout" class="row" style="float:right; ">
+		<a href="/shop/checkout" class="btn btn-sm btn-primary btn-black">Checkout</a>
+	</div>
+	<div id="total" class="row" style="padding-top: 7px;">
+		<b>Subtotal:</b> {{ ngCart.getSubTotal() | currency: "£" }}
+	</div>	
+</div>
