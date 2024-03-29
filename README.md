@@ -12,6 +12,12 @@ It was developed in Visual Studio 2022 using the following technologies:
 
 You can view the finished website <a href='https://www.dustyscorner.com' target='_new'>here</a>
 
+Here are some screenshots of the website:
+
+<img align='left' src='https://drive.google.com/uc?id=1eu5gka6dhN4wQ-AVy-EKribgu-PjBKct' width='240'>
+<img align='left' src='https://drive.google.com/uc?id=11AweYaTgiTsGFIAC4JjhSKASLZoZlMYe' width='240'>
+<img src='https://drive.google.com/uc?id=1S5EHed6dv4JDqFyde3po_g7swD98wSna' width='240'>
+
 # Database
 
 You must first define the connection string for the database. In the Solution explorer expand the DustysCorner.DAL project and open the StoreContext.cs file. In the OnCofiguring method you will find the connection string which should look like this:
