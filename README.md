@@ -10,6 +10,8 @@ It was developed in Visual Studio 2022 using the following technologies:
 * AngularJS
 * Bootstrap
 
+You can view the finished website <a href='https://www.dustyscorner.com' target='_new'>here.</a>
+
 # Database
 
 You must first define the connection string for the database. In the Solution explorer expand the DustysCorner.DAL project and open the StoreContext.cs file. In the OnCofiguring method you will find the connection string which should look like this:
