@@ -10,7 +10,7 @@ It was developed in Visual Studio 2022 using the following technologies:
 * AngularJS
 * Bootstrap
 
-You can view the finished website <a href='https://www.dustyscorner.com' target='_new'>here</a>.
+You can view the finished website <a href='https://www.dustyscorner.com' target='_new'>here.</a>
 
 Here are some screenshots of the website:
 
