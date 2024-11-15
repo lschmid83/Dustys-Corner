@@ -6,7 +6,8 @@
       "launchUrl": "category",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "ancmHostingModel": "InProcess"
     },
     "DustysCorner.Service": {
       "commandName": "Project",

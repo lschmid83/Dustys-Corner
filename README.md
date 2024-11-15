@@ -36,6 +36,8 @@ dotnet ef migrations add <migration name> -c DustysCorner.DAL.StoreContext
 
 # Running the Project
 
+You will need to download the ASP.NET v6.0 framework to run the project. The installer can be found [here](https://drive.google.com/file/d/11zncsDcBwREHhEhSzAAK4QLPisN7hSM6/view?usp=sharing)
+
 I would recommend that you search for Visual Studio 2022 in the Start Menu then run it as Administrator to avoid any errors starting the IIS Express server:
 
 1. Right click on the Visual Studio 2022 main application shortcut choose Properties
@@ -43,16 +45,16 @@ I would recommend that you search for Visual Studio 2022 in the Start Menu then 
 3. Click the Advanced... button
 4. Check the Run as administrator checkbox
 
-To run the website project in development mode you must first right click on the Solution Name in the Solution Explorer. In the Startup Project page you should select Multiple Startup Projects and change the Action for DustyCorner.MVC and DustysCorner.Service to Start. You can now click the run button and both projects will start.
-
 You may need to edit the web projects Debug settings.
 
 1. Right click on the web project you need to edit the settings for
 2. Select Properties
 3. Select the Debug -> General tab and Open debug launch profiles UI
 4. Check the App URL is using a free port
-5. Uncheck Use SSL
-6. Change the Hosting Model to In Process
+5. Change the Hosting Model to In Process
+6. Uncheck Use SSL
+
+To run the website project in development mode you must first right click on the Solution Name in the Solution Explorer. In the Startup Project page you should select Multiple Startup Projects and change the Action for DustyCorner.MVC and DustysCorner.Service to Start. You can now click the run button and both projects will start.
 
 # Note
 
